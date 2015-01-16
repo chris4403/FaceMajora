@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FaceMajora</title>
+    <style></style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./jquery.facedetection.min.js"></script>
+    <script src="./majora-face.js"></script>
+  </head>
+  <body>
+    <p>画像を指定すると顔を検出してムジュラの仮面を重ねます</p>
+    <input id="fileInput" name="image" type="file" />
+    <br/>
+    <canvas id="base" height=10 width=10></canvas>
+    <img src="./mask.png" id="mask" style="display:none;"/>
+  </body>
+</html>
+
