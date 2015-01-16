@@ -13,10 +13,24 @@ $(function(){
         var reader = new FileReader();
         reader.onload = function(evt) {
             img.onload = function() {
+                var height;
+                var width;
+                if (img.height > 800 || img.width > 800) {
+                    if (img.height > img.width) {
+                        height = 800;
+                        width = img.width * 800 / img.height;
+                    } else {
+                        width = 800;
+                        height = img.height * 800 / img.width;
+                    }
+                } else {
+                    height = img.height;
+                    width = img.width;
+                }
 
-                canvas.height = img.height;
-                canvas.width = img.width;
-                canvas2d.drawImage(img, 0, 0);
+                canvas.height = height;
+                canvas.width = width;
+                canvas2d.drawImage(img, 0, 0, width, height);
                 $("#base").faceDetection({
                     complete: function (obj){
 
